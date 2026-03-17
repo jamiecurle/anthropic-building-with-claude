@@ -1,9 +1,17 @@
 import fn
+from anthropic.types import MessageParam
 
-messages = []
+# create a list of messages
+messages: list[MessageParam] = []
 
-fn.add_assistant_message(messages, "What is 3 * 3?")
+# some basic UX
+print("What do you want to ask?")
 
-
-response = fn.chat(messages)
-print(response)
+# enter into a loop of question, response, update peasant context
+# sidenote: obviously this is untrused, unsanitised input.
+while True:
+    user_input = input(">")
+    fn.add_user_message(messages, user_input)
+    response = fn.chat(messages)
+    fn.add_assistant_message(messages, response)
+    print(response)
