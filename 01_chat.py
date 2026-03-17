@@ -12,6 +12,6 @@ print("What do you want to ask?")
 while True:
     user_input = input(">")
     fn.add_user_message(messages, user_input)
-    response = fn.chat(messages)
+    response: str = fn.chat(messages)
     fn.add_assistant_message(messages, response)
     print(response)
