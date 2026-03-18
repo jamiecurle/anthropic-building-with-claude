@@ -37,7 +37,7 @@ def chat(
         max_tokens=1000,
         messages=messages,
         system=system or "",
-        temperature=0.3,
+        temperature=temperature,
         stop_sequences=stop_sequences,
     )
 

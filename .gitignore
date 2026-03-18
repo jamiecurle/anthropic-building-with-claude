@@ -8,3 +8,6 @@ wheels/
 
 # no you shall not have my api key.
 .env
+
+# no, we do not want the notebooks
+*.ipynb
