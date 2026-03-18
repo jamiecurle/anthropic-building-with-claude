@@ -7,6 +7,12 @@ load_dotenv()
 client = Anthropic()
 
 
+def inspect(content: str, label: str | None = None) -> None:
+    if label:
+        print(label, ":\n")
+    print(content, "\n----------\n\n")
+
+
 def add_user_message(messages: list[MessageParam], content: str) -> None:
     """Peasant context simulation"""
     user_message: MessageParam = {"role": "user", "content": content}
@@ -20,7 +26,10 @@ def add_assistant_message(messages: list[MessageParam], content: str) -> None:
 
 
 def chat(
-    messages: list[MessageParam], system: str | None = None, temperature: float = 0.2
+    messages: list[MessageParam],
+    system: str | None = None,
+    temperature: float = 0.2,
+    stop_sequences: list[str] = [],
 ) -> str:
     """Basic text response handling"""
     message: Message = client.messages.create(
@@ -28,7 +37,8 @@ def chat(
         max_tokens=1000,
         messages=messages,
         system=system or "",
-        temperature=temperature,
+        temperature=0.3,
+        stop_sequences=stop_sequences,
     )
 
     # make sure we're returning something capable of having text type
