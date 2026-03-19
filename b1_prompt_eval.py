@@ -3,10 +3,14 @@
 
 # {task}
 # """
+
 import json
-import fn
+import ast
+import re
 from statistics import mean
 from anthropic.types import MessageParam
+
+import fn
 
 
 def generate_dataset() -> dict:
@@ -20,6 +24,7 @@ Example output:
 [
     {
         "task": "Description of task",
+        "format" "json" or "python" or "regex"
     },
     ...additional
 ]
@@ -67,11 +72,15 @@ def run_prompt(test_case: dict) -> str:
 Please solve the following task:
 
 {test_case["task"]}
-"""
 
+* Respond only with Python, JSON, or a plain Regex
+* Do not add any comments or commentary or explaination
+"""
+    # now the dance
     messages: list[MessageParam] = []
     fn.add_user_message(messages, prompt)
-    output = fn.chat(messages)
+    fn.add_assistant_message(messages, "```code")
+    output = fn.chat(messages, stop_sequences=["```"])
     return output
 
 
@@ -114,14 +123,58 @@ def grade_by_model(test_case: dict, output: str) -> dict:
     return json.loads(eval_text)
 
 
+def validate_json(text: str) -> int:
+    try:
+        json.loads(text)
+        return 10
+    except json.JSONDecodeError:
+        return 0
+
+
+def validate_python(text: str) -> int:
+    try:
+        ast.parse(text)
+        return 10
+    except SyntaxError:
+        return 0
+
+
+def validate_regex(text: str) -> int:
+    try:
+        re.compile(text)
+        return 10
+    except re.error:
+        return 0
+
+
+def grade_syntax(response: str, test_case: dict) -> int:
+    match test_case["format"]:
+        case "python":
+            return validate_python(response)
+        case "json":
+            return validate_json(response)
+        case "regex":
+            return validate_regex(response)
+
+    # in prod I'd raise a ValueError here, but as this
+    # is learning land, print out something helpful and
+    # return zero.
+    print("No parseable format found in response")
+    return 0
+
+
 def run_test_case(test_case: dict) -> dict:
     """Calls run_prompt, then grades the result"""
     output = run_prompt(test_case)
 
-    # TODO - Grading
+    # the grading
     model_grade = grade_by_model(test_case, output)
-    score = model_grade["score"]
+    model_score = model_grade["score"]
     reasoning = model_grade["reasoning"]
+
+    syntax_score = grade_syntax(output, test_case)
+
+    score = (model_score + syntax_score) / 2
 
     return {
         "reasoning": reasoning,
