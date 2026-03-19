@@ -1,9 +1,3 @@
-# prompt = f"""
-# Please provide a solution to the following task:
-
-# {task}
-# """
-
 import json
 import datetime
 import ast
