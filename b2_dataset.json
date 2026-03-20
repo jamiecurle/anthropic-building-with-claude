@@ -1,0 +1,49 @@
+[
+  {
+    "prompt_inputs": {
+      "height": "180",
+      "weight": "72",
+      "goal": "Marathon preparation with carbohydrate loading for sustained endurance performance",
+      "restrictions": "None"
+    },
+    "solution_criteria": [
+      "Meal plan totals 3,000+ calories with carbohydrates comprising 55-65% of total calories",
+      "Includes 4-5 meals/snacks distributed throughout the day for sustained energy",
+      "Features easily digestible, high-carbohydrate foods suitable for endurance training"
+    ],
+    "task_description": "Write a compact concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a high-performance endurance athlete (marathon runner) requiring 3,000+ calories with emphasis on carbohydrate loading and sustained energy"
+  },
+  {
+    "prompt_inputs": {
+      "height": "180",
+      "weight": "85",
+      "goal": "Build muscle and strength through weightlifting with high protein intake",
+      "restrictions": "None"
+    },
+    "solution_criteria": [
+      "Meal plan contains minimum 150g protein distributed across all meals",
+      "Includes pre-training and post-training meal timing recommendations",
+      "Provides 4-5 meals/snacks with specific food items and approximate portions",
+      "Total daily calories support muscle building for an 85kg strength athlete"
+    ],
+    "task_description": "Write a compact concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a strength/power athlete (weightlifter) needing high protein intake (150g+) and specific timing around training sessions"
+  },
+  {
+    "prompt_inputs": {
+      "height": "178 cm",
+      "weight": "75 kg",
+      "goal": "Lose 3 kg over 2 weeks while maintaining strength and power for boxing training",
+      "restrictions": "No dairy, no processed foods"
+    },
+    "solution_criteria": [
+      "Meal plan contains exactly 4 meals with strategic timing around training sessions",
+      "Total daily calories create a moderate deficit (approximately 500 kcal below maintenance) suitable for weight-conscious athletes",
+      "All meals comply with stated dietary restrictions (dairy-free, whole foods only)",
+      "Pre-training and post-training nutrition included to support performance during caloric deficit"
+    ],
+    "task_description": "Write a compact concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a weight-conscious athlete (boxer/wrestler) requiring caloric deficit while maintaining performance, with strategic meal timing around training"
+  }
+]

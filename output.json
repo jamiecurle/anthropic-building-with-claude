@@ -1,0 +1,64 @@
+[
+  {
+    "output": "# Marathon Nutrition Plan\n\n## Daily Caloric Needs\n- **Base metabolic rate**: ~1,700-1,800 kcal\n- **With marathon training**: 2,800-3,500+ kcal/day (depending on training intensity)\n\n## Macronutrient Breakdown\n\n### Carbohydrates (55-65% of calories)\n**Most important for marathon prep**\n- 400-450g daily during heavy training\n- Focus on: oats, rice, pasta, bread, potatoes, fruits, quinoa\n- Time carbs around workouts for optimal absorption\n\n### Protein (1.2-1.6g per kg body weight)\n- 85-115g daily\n- Sources: chicken, fish, eggs, Greek yogurt, legumes, lean beef\n\n### Fats (20-30% of calories)\n- 60-85g daily\n- Sources: olive oil, nuts, avocado, fatty fish (omega-3s)\n\n## Meal Timing Strategy\n\n| When | What |\n|------|------|\n| **Pre-run** (2-3 hrs before) | Oatmeal + banana + honey |\n| **During long runs** (90+ min) | Sports drink, gels, energy bars |\n| **Post-run** (30-60 min) | Pasta + chicken + vegetables |\n| **Daily snacks** | Fruit, yogurt, nuts, rice cakes |\n\n## Key Recommendations\n\u2713 Hydrate consistently (3-4L water daily, more on training days)\n\u2713 Practice race-day nutrition during long training runs\n\u2713 Increase carbs 3 days before race (carb-loading)\n\u2713 Maintain consistent sleep and recovery nutrition\n\nWould you like specific meal examples or a weekly plan?",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "180",
+        "weight": "72",
+        "goal": "Marathon preparation with carbohydrate loading for sustained endurance performance",
+        "restrictions": "None"
+      },
+      "solution_criteria": [
+        "Meal plan totals 3,000+ calories with carbohydrates comprising 55-65% of total calories",
+        "Includes 4-5 meals/snacks distributed throughout the day for sustained energy",
+        "Features easily digestible, high-carbohydrate foods suitable for endurance training"
+      ],
+      "task_description": "Write a compact concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a high-performance endurance athlete (marathon runner) requiring 3,000+ calories with emphasis on carbohydrate loading and sustained energy"
+    },
+    "score": 2,
+    "reasoning": "The solution violates all three MANDATORY requirements. While it provides excellent general nutritional framework and principles for marathon preparation, it does not deliver what was explicitly requested: a compact, concise 1-day meal plan. The solution offers a template and guidance rather than an actual meal plan with specific foods, portions, timing, and calculated totals. The athlete cannot follow this plan without making their own decisions about portions and meal composition. The task explicitly asks for a '1 day meal plan' with specific meals, not general nutritional principles."
+  },
+  {
+    "output": "# Nutrition Plan for Muscle Building\n\n## Daily Calorie & Macro Targets\n\n**Estimated Daily Calories:** 2,800-3,200 kcal (slight surplus for muscle gain)\n\n**Macronutrient Breakdown:**\n- **Protein:** 170-190g/day (2.0-2.2g per kg bodyweight)\n- **Carbs:** 350-420g/day (fuel for training)\n- **Fats:** 85-100g/day (hormone production)\n\n## Recommended Foods by Category\n\n### Protein Sources\n- Chicken breast, turkey, lean beef\n- Fish (salmon, cod, tuna)\n- Eggs & egg whites\n- Greek yogurt, cottage cheese\n- Whey protein powder\n- Legumes (beans, lentils)\n\n### Carbohydrates\n- Oats, brown rice, quinoa\n- Sweet potatoes, regular potatoes\n- Whole grain bread & pasta\n- Fruits (bananas, berries, apples)\n- Vegetables (broccoli, spinach, carrots)\n\n### Healthy Fats\n- Olive oil, avocado oil\n- Nuts & seeds (almonds, walnuts)\n- Fatty fish (omega-3s)\n- Avocados\n\n## Meal Timing Tips\n- Eat protein + carbs around workouts\n- Distribute protein across 4-5 meals\n- Stay hydrated (3-4L water daily)\n\n**Consider consulting a nutritionist for personalized meal planning.**",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "180",
+        "weight": "85",
+        "goal": "Build muscle and strength through weightlifting with high protein intake",
+        "restrictions": "None"
+      },
+      "solution_criteria": [
+        "Meal plan contains minimum 150g protein distributed across all meals",
+        "Includes pre-training and post-training meal timing recommendations",
+        "Provides 4-5 meals/snacks with specific food items and approximate portions",
+        "Total daily calories support muscle building for an 85kg strength athlete"
+      ],
+      "task_description": "Write a compact concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a strength/power athlete (weightlifter) needing high protein intake (150g+) and specific timing around training sessions"
+    },
+    "score": 2,
+    "reasoning": "The solution violates all three mandatory requirements. While it correctly identifies appropriate caloric and macronutrient targets for the athlete, it fails to deliver the core requirement: a compact, concise 1-day meal plan. The task explicitly asks for a meal plan, not general nutritional guidelines. The solution provides food categories and principles rather than actual meals with specific foods, portions, and timing. It lacks the 4-5 structured meals/snacks with exact portions needed to meet the secondary criteria, and provides only vague meal timing advice rather than specific pre/post-workout meal recommendations. This is a framework/template rather than an actionable meal plan."
+  },
+  {
+    "output": "# Nutrition Plan for Boxing & Weight Loss\n\n## Reality Check\nLosing 3 kg in 2 weeks is **aggressive and risky** for an athlete. This is ~1.5 kg/week, which risks:\n- Muscle loss\n- Dehydration\n- Performance decline\n- Injury risk\n\n**Better goal:** 1-1.5 kg/week (2-3 kg over 2 weeks) with proper hydration.\n\n---\n\n## Daily Calorie Target\n- **Maintenance:** ~2,400-2,600 cal (active boxer)\n- **For weight loss:** 1,900-2,100 cal/day (moderate deficit)\n- **Adjust based on training intensity**\n\n---\n\n## Meal Framework (Sample Day)\n\n### Breakfast (~500 cal)\n- Oatmeal with banana, almond butter, honey\n- Or: Rice + eggs (3) + vegetables\n\n### Mid-Morning Snack (~200 cal)\n- Apple + almond butter\n- Or: Rice cakes + coconut oil\n\n### Lunch (~600 cal)\n- Grilled chicken/fish (150g)\n- Sweet potato or white rice (150g)\n- Vegetables (broccoli, carrots)\n- Olive oil for cooking\n\n### Pre-Training Snack (~200 cal)\n- Banana + dates\n- Or: White rice + honey\n\n### Post-Training (~400 cal)\n- Lean meat (150g) + rice\n- Fruit (mango, pineapple)\n\n### Dinner (~300 cal)\n- Fish or lean beef\n- Vegetables + small rice portion\n\n---\n\n## Key Priorities\n\u2705 **Protein:** 1.6-2.0g per kg (120-150g daily) \u2014 preserve muscle  \n\u2705 **Carbs:** Front-load around training  \n\u2705 **Hydration:** 3-4L water daily  \n\u2705 **Whole foods only:** Meat, fish, rice, oats, vegetables, fruits, nuts, oils  \n\u2705 **Weigh daily:** Track trends, not single days\n\n---\n\n## Warning Signs to Stop\n- Dizziness during training\n- Loss of power/speed\n- Extreme fatigue\n- Dehydration symptoms\n\n**Consider consulting a sports nutritionist** for personalized guidance.",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "178 cm",
+        "weight": "75 kg",
+        "goal": "Lose 3 kg over 2 weeks while maintaining strength and power for boxing training",
+        "restrictions": "No dairy, no processed foods"
+      },
+      "solution_criteria": [
+        "Meal plan contains exactly 4 meals with strategic timing around training sessions",
+        "Total daily calories create a moderate deficit (approximately 500 kcal below maintenance) suitable for weight-conscious athletes",
+        "All meals comply with stated dietary restrictions (dairy-free, whole foods only)",
+        "Pre-training and post-training nutrition included to support performance during caloric deficit"
+      ],
+      "task_description": "Write a compact concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a weight-conscious athlete (boxer/wrestler) requiring caloric deficit while maintaining performance, with strategic meal timing around training"
+    },
+    "score": 2,
+    "reasoning": "While the solution demonstrates strong nutritional knowledge and provides valuable context about safe weight loss practices, it fundamentally fails to deliver the mandatory requirements. The task explicitly requires: (1) daily caloric total, (2) macronutrient breakdown, and (3) meals with exact foods, portions, and timing. The solution provides only a framework with ranges and vague meal suggestions rather than a concrete, executable 1-day meal plan. Additionally, it violates the secondary criteria by including 6 meals instead of 4. The solution reads more like nutritional guidance than an actual meal plan."
+  }
+]
