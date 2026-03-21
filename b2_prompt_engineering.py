@@ -53,15 +53,34 @@ def run_evaluator() -> list:
     return results
 
 
-def run_prompt(prompt_inputs: dict[str, Any]) -> str:
-    prompt = f"""
+def versioned_prompt(version: int, prompt_inputs: dict[str, str]) -> str:
+    PROMPTS = {
+        # starter prompt ... 2.0 score
+        1: f"""
     What should this person eat?
     
     - Height: {prompt_inputs["height"]}
     - Weight: {prompt_inputs["weight"]}
     - Goal: {prompt_inputs["goal"]} 
     - Dietary restrictions: {prompt_inputs["restrictions"]}
-    """
+    """,
+        # V2: clear and direct....
+        # note: action verb at the start along with a clear task.
+        2: f"""
+    Generate a one day meal plan for an athelete that meets their dietary restrictions.
+    
+    - Height: {prompt_inputs["height"]}
+    - Weight: {prompt_inputs["weight"]}
+    - Goal: {prompt_inputs["goal"]} 
+    - Dietary restrictions: {prompt_inputs["restrictions"]}
+    """,
+    }
+
+    return PROMPTS[version]
+
+
+def run_prompt(prompt_inputs: dict[str, Any]) -> str:
+    prompt = versioned_prompt(2, prompt_inputs=prompt_inputs)
 
     # create a list of messages
     messages: list[MessageParam] = []
