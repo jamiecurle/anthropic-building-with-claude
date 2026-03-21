@@ -74,13 +74,54 @@ def versioned_prompt(version: int, prompt_inputs: dict[str, str]) -> str:
     - Goal: {prompt_inputs["goal"]} 
     - Dietary restrictions: {prompt_inputs["restrictions"]}
     """,
+        # V3: + now also specific
+        # note: Guidelines
+        2: f"""
+    Generate a one day meal plan for an athelete that meets their dietary restrictions.
+    
+    - Height: {prompt_inputs["height"]}
+    - Weight: {prompt_inputs["weight"]}
+    - Goal: {prompt_inputs["goal"]} 
+    - Dietary restrictions: {prompt_inputs["restrictions"]}""",
+        3: f"""
+    Generate a one day meal plan for an athelete that meets their dietary restrictions.
+    
+    - Height: {prompt_inputs["height"]}
+    - Weight: {prompt_inputs["weight"]}
+    - Goal: {prompt_inputs["goal"]} 
+    - Dietary restrictions: {prompt_inputs["restrictions"]}
+    
+    Guidelines:
+    1. Include accurate daily calorie amount
+    2. Show protein, fat, and carb amounts  
+    3. Specify when to eat each meal
+    4. Use only foods that fit restrictions
+    5. List all portion sizes in grams
+    6. Keep budget-friendly if mentioned
+    """,
+        4: f"""
+    Generate a one day meal plan for an athelete that meets their dietary restrictions.
+    
+    - Height: {prompt_inputs["height"]}
+    - Weight: {prompt_inputs["weight"]}
+    - Goal: {prompt_inputs["goal"]} 
+    - Dietary restrictions: {prompt_inputs["restrictions"]}
+    
+    Follow these steps:
+    1. Calulate daily calories needed
+    2. Figure out protein, carbs and fat amounts
+    3. Plan meal timings around workouts
+    4. Choose foods that fit restrictions
+    5. Set portion sizes in grams
+    6. Adjust for budget if needed
+    """,
     }
 
     return PROMPTS[version]
 
 
 def run_prompt(prompt_inputs: dict[str, Any]) -> str:
-    prompt = versioned_prompt(2, prompt_inputs=prompt_inputs)
+    prompt = versioned_prompt(4, prompt_inputs=prompt_inputs)
 
     # create a list of messages
     messages: list[MessageParam] = []
