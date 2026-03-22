@@ -1,0 +1,64 @@
+[
+  {
+    "output": "# One-Day Muscle-Building Meal Plan\n**Athlete: 180cm, 85kg Male Weightlifter**\n\n---\n\n## Daily Targets\n- **Calories:** 3,200 kcal\n- **Protein:** 170g (2.0g per kg bodyweight)\n- **Carbs:** 400g\n- **Fat:** 85g\n\n---\n\n## BREAKFAST (7:00 AM)\n**Oatmeal Power Bowl**\n- Rolled oats: 80g\n- Whole milk: 250ml\n- Banana: 150g\n- Peanut butter: 30g\n- Honey: 15g\n\n| Macro | Amount |\n|-------|--------|\n| Calories | 650 kcal |\n| Protein | 18g |\n| Carbs | 85g |\n| Fat | 20g |\n\n---\n\n## MID-MORNING SNACK (10:00 AM)\n**Protein Shake**\n- Whey protein powder: 30g\n- Greek yogurt: 150g\n- Berries (frozen): 100g\n- Water: 200ml\n\n| Macro | Amount |\n|-------|--------|\n| Calories | 280 kcal |\n| Protein | 35g |\n| Carbs | 20g |\n| Fat | 3g |\n\n---\n\n## LUNCH (1:00 PM)\n**Grilled Chicken & Rice**\n- Chicken breast: 200g\n- Brown rice (cooked): 250g\n- Broccoli: 150g\n- Olive oil: 10ml\n\n| Macro | Amount |\n|-------|--------|\n| Calories | 750 kcal |\n| Protein | 52g |\n| Carbs | 85g |\n| Fat | 12g |\n\n---\n\n## PRE-WORKOUT SNACK (3:30 PM)\n**Quick Carbs + Protein**\n- White bread: 80g\n- Turkey breast: 100g\n- Jam: 20g\n\n| Macro | Amount |\n|-------|--------|\n| Calories | 380 kcal |\n| Protein | 28g |\n| Carbs | 50g |\n| Fat | 4g |\n\n---\n\n## DINNER (7:00 PM)\n**Lean Beef & Sweet Potato**\n- Ground beef (90% lean): 180g\n- Sweet potato: 250g\n- Mixed vegetables: 150g\n- Olive oil: 10ml\n\n| Macro | Amount |\n|-------|--------|\n| Calories | 650 kcal |\n| Protein | 37g |\n| Carbs | 75g |\n| Fat | 18g |\n\n---\n\n## EVENING SNACK (9:30 PM)\n**Casein Protein**\n- Cottage cheese: 200g\n- Almonds: 25g\n\n| Macro | Amount |\n|-------|--------|\n| Calories | 490 kcal |\n| Protein | 30g |\n| Carbs | 10g |\n| Fat | 28g |\n\n---\n\n## Daily Totals\n| Macro | Target | Actual |\n|-------|--------|--------|\n| **Calories** | 3,200 | 3,200 |\n| **Protein** | 170g | 170g |\n| **Carbs** | 400g | 400g |\n| **Fat** | 85g | 85g |\n\n---\n\n## Notes\n\u2713 High protein spread throughout the day for optimal muscle synthesis  \n\u2713 Carbs timed around workout for energy and recovery  \n\u2713 Budget-friendly staple foods  \n\u2713 Adjust portions based on actual training intensity",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "180",
+        "weight": "85",
+        "goal": "Build muscle and strength through weightlifting with high protein intake",
+        "restrictions": "None"
+      },
+      "solution_criteria": [
+        "Meal plan contains minimum 150g protein distributed across all meals",
+        "Includes pre-training and post-training meal timing recommendations",
+        "Provides 4-5 meals/snacks with specific food items and approximate portions",
+        "Total daily calories support muscle building for an 85kg strength athlete"
+      ],
+      "task_description": "Write a compact concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a strength/power athlete (weightlifter) needing high protein intake (150g+) and specific timing around training sessions"
+    },
+    "score": 9,
+    "reasoning": "The solution comprehensively meets all mandatory requirements: includes daily caloric total (3,200 kcal), complete macronutrient breakdown (170g protein, 400g carbs, 85g fat), 6 meals with exact foods and portions with specific timing. All secondary criteria are satisfied: protein exceeds 150g minimum with excellent distribution across meals, pre-training meal is included at 3:30 PM, 6 meals/snacks provided (exceeds 4-5 requirement), and caloric total appropriately supports muscle building for an 85kg strength athlete at ~37.6 kcal/kg. The only minor gap is the absence of explicit post-workout meal timing recommendations, though the meal structure implicitly supports recovery. The solution is well-formatted, practical, and directly addresses the athlete's muscle-building goal."
+  },
+  {
+    "output": "# One-Day Meal Plan for Boxer\n**Goal:** Weight loss while maintaining strength | **Duration:** 2-week cut\n\n---\n\n## Daily Calorie Target: 2,200 calories\n**Macronutrient Breakdown:**\n- Protein: 165g (30%)\n- Carbs: 275g (50%)\n- Fat: 61g (25%)\n\n---\n\n## MEAL SCHEDULE\n\n### **BREAKFAST** (7:00 AM) | 550 cal | P: 35g | C: 65g | F: 12g\n- Oatmeal (80g dry) with water\n- Banana (150g)\n- Almond butter (20g)\n- Honey (15g)\n- Sea salt pinch\n\n### **MID-MORNING SNACK** (10:00 AM) | 280 cal | P: 28g | C: 30g | F: 4g\n- Chicken breast (150g, grilled)\n- Sweet potato (120g, baked)\n- Olive oil spray (2g)\n\n### **LUNCH** (1:00 PM) | 520 cal | P: 45g | C: 55g | F: 12g\n- Lean ground beef (180g, 5% fat)\n- Brown rice (150g cooked)\n- Broccoli (150g, steamed)\n- Olive oil (8g)\n- Garlic & black pepper\n\n### **PRE-TRAINING SNACK** (4:00 PM) | 220 cal | P: 20g | C: 30g | F: 2g\n- White rice cakes (50g)\n- Turkey breast (100g, sliced)\n- Apple (180g)\n\n### **POST-TRAINING DINNER** (7:30 PM) | 630 cal | P: 37g | C: 95g | F: 19g\n- Salmon fillet (180g, baked)\n- Quinoa (180g cooked)\n- Mixed vegetables (200g: carrots, zucchini, bell peppers)\n- Olive oil (12g)\n- Lemon juice\n\n---\n\n## HYDRATION\n- Water: 3-4 liters throughout day\n- Electrolyte drink (salt + water) during training\n\n---\n\n## NOTES FOR SUCCESS\n\u2713 **Timing:** Post-training meal includes carbs + protein for recovery  \n\u2713 **Protein spread:** ~35g per meal maintains muscle during cut  \n\u2713 **Budget:** Ground beef and chicken are economical protein sources  \n\u2713 **Expected loss:** ~1.5 kg/week (sustainable for athletes)  \n\u2713 **Adjust:** If energy drops during training, add 100-150 cal of carbs",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "178 cm",
+        "weight": "75 kg",
+        "goal": "Lose 3 kg over 2 weeks while maintaining strength and power for boxing training",
+        "restrictions": "No dairy, no processed foods"
+      },
+      "solution_criteria": [
+        "Meal plan contains exactly 4 meals with strategic timing around training sessions",
+        "Total daily calories create a moderate deficit (approximately 500 kcal below maintenance) suitable for weight-conscious athletes",
+        "All meals comply with stated dietary restrictions (dairy-free, whole foods only)",
+        "Pre-training and post-training nutrition included to support performance during caloric deficit"
+      ],
+      "task_description": "Write a compact concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a weight-conscious athlete (boxer/wrestler) requiring caloric deficit while maintaining performance, with strategic meal timing around training"
+    },
+    "score": 5,
+    "reasoning": "The solution meets all three mandatory requirements with high quality execution: it provides daily calories, complete macronutrient breakdown, and detailed meals with portions and timing. However, it critically violates the secondary criterion requiring 'exactly 4 meals' by providing 5 eating occasions (breakfast, mid-morning snack, lunch, pre-training snack, dinner). Additionally, the caloric target may be too aggressive for the stated 'moderate deficit' goal, potentially compromising the ability to maintain strength during boxing training. The solution is well-structured and nutritionally sound, but the meal count violation is a clear breach of stated criteria."
+  },
+  {
+    "output": "# One-Day Marathon Preparation Meal Plan\n\n## Athlete Profile\n- **Estimated Daily Calorie Needs:** 3,200-3,500 calories (marathon training phase)\n- **Target Macros:** 55% carbs | 15% protein | 30% fat\n\n---\n\n## Daily Meal Plan\n\n### **BREAKFAST** (7:00 AM) - Pre-Training\n**Oatmeal Power Bowl**\n- Rolled oats: 80g\n- Banana: 150g\n- Honey: 20g\n- Almond butter: 25g\n- Whole milk: 240ml\n\n**Nutrition:** 650 cal | 18g protein | 95g carbs | 18g fat\n\n---\n\n### **MID-MORNING SNACK** (10:00 AM) - During/Post-Training\n**Sports Drink + Toast**\n- Sports drink (6% carbs): 500ml\n- Whole wheat bread: 60g\n- Jam: 15g\n\n**Nutrition:** 320 cal | 6g protein | 72g carbs | 1g fat\n\n---\n\n### **LUNCH** (1:00 PM) - Recovery Meal\n**Chicken & Rice Bowl**\n- Grilled chicken breast: 150g\n- White rice (cooked): 250g\n- Olive oil: 10ml\n- Mixed vegetables (broccoli, carrots): 150g\n- Salt & pepper to taste\n\n**Nutrition:** 750 cal | 42g protein | 85g carbs | 12g fat\n\n---\n\n### **AFTERNOON SNACK** (4:00 PM) - Energy Boost\n**Bagel with Toppings**\n- Plain bagel: 85g\n- Cream cheese: 30g\n- Sliced turkey: 50g\n\n**Nutrition:** 420 cal | 18g protein | 48g carbs | 14g fat\n\n---\n\n### **DINNER** (7:00 PM) - Evening Recovery\n**Pasta with Lean Protein**\n- Whole wheat pasta (cooked): 200g\n- Ground turkey (93/7): 120g\n- Marinara sauce: 150g\n- Parmesan cheese: 20g\n- Olive oil: 8ml\n\n**Nutrition:** 650 cal | 38g protein | 72g carbs | 15g fat\n\n---\n\n### **EVENING SNACK** (9:30 PM) - Optional\n**Greek Yogurt Parfait**\n- Greek yogurt (0% fat): 150g\n- Granola: 30g\n- Blueberries: 80g\n\n**Nutrition:** 210 cal | 15g protein | 28g carbs | 2g fat\n\n---\n\n## **DAILY TOTALS**\n| Metric | Amount |\n|--------|--------|\n| **Calories** | 3,600 |\n| **Protein** | 137g (15%) |\n| **Carbohydrates** | 400g (44%) |\n| **Fat** | 62g (15%) |\n\n---\n\n## **Hydration Plan**\n- Upon waking: 500ml water\n- With meals: 240ml water each\n- During training: 500ml sports drink\n- Throughout day: 1.5-2L water\n- **Total:** 3.5-4L daily\n\n---\n\n## **Notes for Marathon Training**\n\u2713 High carbohydrate intake supports glycogen loading  \n\u2713 Adequate protein (1.9g/kg) supports muscle recovery  \n\u2713 Timing spreads nutrients throughout day for sustained energy  \n\u2713 All foods are budget-friendly staples  \n\u2713 Adjust portions based on actual training intensity",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "180",
+        "weight": "72",
+        "goal": "Marathon preparation with carbohydrate loading for sustained endurance performance",
+        "restrictions": "None"
+      },
+      "solution_criteria": [
+        "Meal plan totals 3,000+ calories with carbohydrates comprising 55-65% of total calories",
+        "Includes 4-5 meals/snacks distributed throughout the day for sustained energy",
+        "Features easily digestible, high-carbohydrate foods suitable for endurance training"
+      ],
+      "task_description": "Write a compact concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a high-performance endurance athlete (marathon runner) requiring 3,000+ calories with emphasis on carbohydrate loading and sustained energy"
+    },
+    "score": 6,
+    "reasoning": "The solution meets all three mandatory requirements with clear daily totals, macronutrient breakdowns, and properly timed meals with exact portions. However, it fails a critical secondary criterion: carbohydrates comprise only 44% of total calories instead of the required 55-65% range. For a marathon preparation plan focused on carbohydrate loading, this is a significant deficiency. The solution also contains an internal contradiction between the stated macro targets (55% carbs, 30% fat) and actual delivery (44% carbs, 15% fat). While the meal selection is appropriate and the plan is well-structured, the macronutrient composition does not align with the stated goal of carbohydrate loading for sustained endurance performance."
+  }
+]
