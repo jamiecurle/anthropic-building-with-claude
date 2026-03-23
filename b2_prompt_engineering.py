@@ -110,7 +110,23 @@ def versioned_prompt(version: int, prompt_inputs: dict[str, str]) -> str:
     """,
         # XML tags to provide extre context
         5: f"""
-        """,
+    Generate a one day meal plan for an athelete that meets their dietary restrictions.
+    
+    <athlete_information>
+    - Height: {prompt_inputs["height"]}
+    - Weight: {prompt_inputs["weight"]}
+    - Goal: {prompt_inputs["goal"]} 
+    - Dietary restrictions: {prompt_inputs["restrictions"]}
+    </athlete_information>
+    
+    Guidelines:
+    1. Include accurate daily calorie amount
+    2. Show protein, fat, and carb amounts  
+    3. Specify when to eat each meal
+    4. Use only foods that fit restrictions
+    5. List all portion sizes in grams
+    6. Keep budget-friendly if mentioned
+    """,
         #
         # ONESHOT/MULTISHOT
         # Below we've taken some of the data from the eveal report and given it as a "one shot"
