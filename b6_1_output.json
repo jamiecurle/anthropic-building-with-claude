@@ -1,0 +1,53 @@
+[
+  {
+    "output": "# Topics in this text:\n\n1. **Machine Learning** - the overarching field\n2. **Artificial Intelligence** - applications across domains\n3. **Deep Neural Networks** - a key ML technique\n4. **Image Recognition** - a specific application\n5. **Convolutional Architectures** - neural network design\n6. **Backpropagation Algorithms** - training method\n7. **Natural Language Processing (NLP)** - another application domain\n8. **Transformer Models** - deep learning architecture\n9. **Attention Mechanisms** - a neural network component\n10. **Semantic Relationships** - what attention mechanisms capture\n11. **Transfer Learning** - a learning paradigm\n12. **Pre-trained Models** - leveraging existing networks\n13. **Reinforcement Learning** - learning through interaction\n14. **Supervised Learning** - a fundamental training approach\n\nThe text essentially provides an overview of modern machine learning and AI, covering various architectures, techniques, and learning paradigms.",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Recent advances in machine learning have revolutionized artificial intelligence applications across multiple domains. Deep neural networks, a subset of machine learning techniques, have demonstrated exceptional performance in image recognition tasks, leveraging convolutional architectures and backpropagation algorithms. Furthermore, natural language processing has benefited from transformer-based deep learning models, which employ attention mechanisms to capture semantic relationships. Transfer learning, another machine learning paradigm, enables practitioners to leverage pre-trained deep neural networks for domain-specific tasks with limited labeled data. Reinforcement learning complements these approaches by enabling agents to learn optimal policies through interaction with environments, while supervised learning remains fundamental to training both traditional machine learning models and deep neural network architectures."
+      },
+      "solution_criteria": [
+        "Extracts all distinct topics without redundancy (e.g., 'machine learning' and 'deep neural networks' listed separately despite hierarchical relationship)",
+        "Returns results as a JSON array of strings",
+        "Avoids duplicate entries for overlapping or nested concepts"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholary article into a JSON array of strings",
+      "scenario": "Testing with a passage containing overlapping or nested topics (e.g., 'machine learning' and 'deep neural networks') to ensure distinct topic identification without redundancy"
+    },
+    "score": 2,
+    "reasoning": "The solution fails all three mandatory requirements. It does not return a JSON array of strings as the sole response - instead it provides markdown-formatted numbered list with explanatory text and a summary paragraph. The format is fundamentally incorrect. Additionally, some entries like 'Semantic Relationships' are not topics but rather concepts that mechanisms capture. While the topic identification itself shows good comprehension, the output format completely violates the mandatory requirements, resulting in automatic failure."
+  },
+  {
+    "output": "# Topics in this text:\n\n1. **Quantum Computing** - advances and development\n2. **Cryptography & Data Security** - implications and applications\n3. **Philosophy of Computation** - nature of computation and determinism\n4. **Error-Correcting Codes** - surface codes and engineering improvements\n5. **Digital Humanities** - textual analysis methodologies\n6. **Renaissance Poetry** - metaphorical language patterns\n7. **Interdisciplinary Research** - collaboration across fields\n8. **Pharmaceutical Applications** - drug discovery via molecular simulation\n9. **Document Authentication** - historical document verification\n\nThe text essentially weaves together **STEM topics** (quantum computing, cryptography, error correction) with **humanities topics** (literary analysis, Renaissance poetry) while emphasizing the importance of **interdisciplinary collaboration**.",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Recent advances in quantum computing have demonstrated significant implications for cryptography and data security, while simultaneously raising philosophical questions about the nature of computation and determinism. The development of error-correcting codes, particularly surface codes with threshold improvements of 1.1%, represents a critical engineering milestone. Meanwhile, literary scholars have begun examining how digital humanities methodologies enable large-scale textual analysis of Renaissance poetry, revealing patterns in metaphorical language use previously obscured by manual approaches. Interdisciplinary collaboration between computer scientists, philosophers, and humanities researchers has become essential, as quantum algorithms now promise to revolutionize both pharmaceutical drug discovery through molecular simulation and historical document authentication through cryptographic verification."
+      },
+      "solution_criteria": [
+        "Extraction includes topics from at least three distinct disciplines (technology/engineering, philosophy, and humanities)",
+        "All major subject areas mentioned are represented in the extracted topics",
+        "Topics are returned as a JSON array of strings with no additional formatting or metadata"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholary article into a JSON array of strings",
+      "scenario": "Testing with a multidisciplinary passage containing mixed technical and humanities topics to verify accurate extraction of diverse subject areas"
+    },
+    "score": 2,
+    "reasoning": "The solution demonstrates strong understanding of the content and successfully extracts relevant topics from multiple disciplines. However, it catastrophically fails the mandatory requirements by not providing a pure JSON array of strings. Instead, it presents topics in a markdown-formatted list with descriptive annotations and includes substantial additional commentary. The mandatory requirement explicitly states the response should contain 'the JSON array and nothing else,' which this solution violates entirely. This is an automatic failure condition regardless of content quality."
+  },
+  {
+    "output": "# Topics in this text:\n\n1. **Quantum Entanglement** - correlated quantum states across spatial separation\n\n2. **Quantum Computing Architectures** - design and implementation of quantum computers\n\n3. **Superconducting Qubits** - quantum bits based on superconducting circuits\n\n4. **Josephson Junctions** - superconducting devices used in qubit fabrication\n\n5. **Quantum Coherence** - maintaining quantum states (coherence times)\n\n6. **Variational Quantum Eigensolvers (VQE)** - quantum algorithm for molecular simulation\n\n7. **Molecular Hamiltonian Simulation** - simulating molecular systems quantum mechanically\n\n8. **Topological Quantum Error Correction** - error correction using topological properties\n\n9. **Non-abelian Anyons** - exotic quasiparticles with special properties\n\n10. **Fractional Quantum Hall States** - quantum states in 2D electron systems\n\n11. **Fault-Tolerant Quantum Computation** - building reliable quantum computers despite errors\n\n12. **Cryogenic Engineering** - ultra-low temperature requirements and challenges\n\nThis text is highly technical and covers **quantum computing hardware and error correction strategies**.",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "The phenomenon of quantum entanglement, wherein two or more particles exhibit correlated quantum states regardless of spatial separation, has profound implications for quantum computing architectures. Recent advances in superconducting qubit fabrication utilizing Josephson junctions have demonstrated coherence times exceeding 100 microseconds, enabling implementation of variational quantum eigensolvers (VQE) for molecular Hamiltonian simulation. Furthermore, topological quantum error correction schemes leveraging non-abelian anyons in fractional quantum Hall states present a promising pathway toward fault-tolerant quantum computation, though practical realization requires precise control of the energy gap and suppression of quasiparticle poisoning mechanisms at cryogenic temperatures below 50 millikelvin."
+      },
+      "solution_criteria": [
+        "Extracts all major domain-specific concepts and terminology (e.g., quantum entanglement, Josephson junctions, variational quantum eigensolvers, topological quantum error correction, non-abelian anyons, quantum Hall states)",
+        "Returns output as a valid JSON array of strings",
+        "Omits generic words while capturing specialized physics and quantum computing topics"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholary article into a JSON array of strings",
+      "scenario": "Testing with a dense, jargon-heavy passage from a specialized field (e.g., quantum physics or molecular biology) to verify extraction of domain-specific terminology and concepts"
+    },
+    "score": 2,
+    "reasoning": "The solution demonstrates excellent topic identification and understanding of the source material. However, it catastrophically fails all three mandatory requirements: (1) it is not a valid JSON array of strings, (2) topics include extra commentary and descriptions, and (3) the response contains additional text beyond the JSON array. The correct format should be a simple JSON array like [\"Quantum Entanglement\", \"Quantum Computing Architectures\", ...] with no additional content. These are explicit, non-negotiable requirements that were completely violated."
+  }
+]

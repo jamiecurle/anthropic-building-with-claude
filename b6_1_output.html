@@ -1,0 +1,228 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">3</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">2.0 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">0.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with a passage containing overlapping or nested topics (e.g., 'machine learning' and 'deep neural networks') to ensure distinct topic identification without redundancy</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in machine learning have revolutionized artificial intelligence applications across multiple domains. Deep neural networks, a subset of machine learning techniques, have demonstrated exceptional performance in image recognition tasks, leveraging convolutional architectures and backpropagation algorithms. Furthermore, natural language processing has benefited from transformer-based deep learning models, which employ attention mechanisms to capture semantic relationships. Transfer learning, another machine learning paradigm, enables practitioners to leverage pre-trained deep neural networks for domain-specific tasks with limited labeled data. Reinforcement learning complements these approaches by enabling agents to learn optimal policies through interaction with environments, while supervised learning remains fundamental to training both traditional machine learning models and deep neural network architectures.</td>
+                <td class="criteria">• Extracts all distinct topics without redundancy (e.g., 'machine learning' and 'deep neural networks' listed separately despite hierarchical relationship)<br>• Returns results as a JSON array of strings<br>• Avoids duplicate entries for overlapping or nested concepts</td>
+                <td class="output"><pre># Topics in this text:
+
+1. **Machine Learning** - the overarching field
+2. **Artificial Intelligence** - applications across domains
+3. **Deep Neural Networks** - a key ML technique
+4. **Image Recognition** - a specific application
+5. **Convolutional Architectures** - neural network design
+6. **Backpropagation Algorithms** - training method
+7. **Natural Language Processing (NLP)** - another application domain
+8. **Transformer Models** - deep learning architecture
+9. **Attention Mechanisms** - a neural network component
+10. **Semantic Relationships** - what attention mechanisms capture
+11. **Transfer Learning** - a learning paradigm
+12. **Pre-trained Models** - leveraging existing networks
+13. **Reinforcement Learning** - learning through interaction
+14. **Supervised Learning** - a fundamental training approach
+
+The text essentially provides an overview of modern machine learning and AI, covering various architectures, techniques, and learning paradigms.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">The solution fails all three mandatory requirements. It does not return a JSON array of strings as the sole response - instead it provides markdown-formatted numbered list with explanatory text and a summary paragraph. The format is fundamentally incorrect. Additionally, some entries like 'Semantic Relationships' are not topics but rather concepts that mechanisms capture. While the topic identification itself shows good comprehension, the output format completely violates the mandatory requirements, resulting in automatic failure.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a multidisciplinary passage containing mixed technical and humanities topics to verify accurate extraction of diverse subject areas</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in quantum computing have demonstrated significant implications for cryptography and data security, while simultaneously raising philosophical questions about the nature of computation and determinism. The development of error-correcting codes, particularly surface codes with threshold improvements of 1.1%, represents a critical engineering milestone. Meanwhile, literary scholars have begun examining how digital humanities methodologies enable large-scale textual analysis of Renaissance poetry, revealing patterns in metaphorical language use previously obscured by manual approaches. Interdisciplinary collaboration between computer scientists, philosophers, and humanities researchers has become essential, as quantum algorithms now promise to revolutionize both pharmaceutical drug discovery through molecular simulation and historical document authentication through cryptographic verification.</td>
+                <td class="criteria">• Extraction includes topics from at least three distinct disciplines (technology/engineering, philosophy, and humanities)<br>• All major subject areas mentioned are represented in the extracted topics<br>• Topics are returned as a JSON array of strings with no additional formatting or metadata</td>
+                <td class="output"><pre># Topics in this text:
+
+1. **Quantum Computing** - advances and development
+2. **Cryptography & Data Security** - implications and applications
+3. **Philosophy of Computation** - nature of computation and determinism
+4. **Error-Correcting Codes** - surface codes and engineering improvements
+5. **Digital Humanities** - textual analysis methodologies
+6. **Renaissance Poetry** - metaphorical language patterns
+7. **Interdisciplinary Research** - collaboration across fields
+8. **Pharmaceutical Applications** - drug discovery via molecular simulation
+9. **Document Authentication** - historical document verification
+
+The text essentially weaves together **STEM topics** (quantum computing, cryptography, error correction) with **humanities topics** (literary analysis, Renaissance poetry) while emphasizing the importance of **interdisciplinary collaboration**.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">The solution demonstrates strong understanding of the content and successfully extracts relevant topics from multiple disciplines. However, it catastrophically fails the mandatory requirements by not providing a pure JSON array of strings. Instead, it presents topics in a markdown-formatted list with descriptive annotations and includes substantial additional commentary. The mandatory requirement explicitly states the response should contain 'the JSON array and nothing else,' which this solution violates entirely. This is an automatic failure condition regardless of content quality.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a dense, jargon-heavy passage from a specialized field (e.g., quantum physics or molecular biology) to verify extraction of domain-specific terminology and concepts</td>
+                <td class="prompt-inputs"><strong>content:</strong> The phenomenon of quantum entanglement, wherein two or more particles exhibit correlated quantum states regardless of spatial separation, has profound implications for quantum computing architectures. Recent advances in superconducting qubit fabrication utilizing Josephson junctions have demonstrated coherence times exceeding 100 microseconds, enabling implementation of variational quantum eigensolvers (VQE) for molecular Hamiltonian simulation. Furthermore, topological quantum error correction schemes leveraging non-abelian anyons in fractional quantum Hall states present a promising pathway toward fault-tolerant quantum computation, though practical realization requires precise control of the energy gap and suppression of quasiparticle poisoning mechanisms at cryogenic temperatures below 50 millikelvin.</td>
+                <td class="criteria">• Extracts all major domain-specific concepts and terminology (e.g., quantum entanglement, Josephson junctions, variational quantum eigensolvers, topological quantum error correction, non-abelian anyons, quantum Hall states)<br>• Returns output as a valid JSON array of strings<br>• Omits generic words while capturing specialized physics and quantum computing topics</td>
+                <td class="output"><pre># Topics in this text:
+
+1. **Quantum Entanglement** - correlated quantum states across spatial separation
+
+2. **Quantum Computing Architectures** - design and implementation of quantum computers
+
+3. **Superconducting Qubits** - quantum bits based on superconducting circuits
+
+4. **Josephson Junctions** - superconducting devices used in qubit fabrication
+
+5. **Quantum Coherence** - maintaining quantum states (coherence times)
+
+6. **Variational Quantum Eigensolvers (VQE)** - quantum algorithm for molecular simulation
+
+7. **Molecular Hamiltonian Simulation** - simulating molecular systems quantum mechanically
+
+8. **Topological Quantum Error Correction** - error correction using topological properties
+
+9. **Non-abelian Anyons** - exotic quasiparticles with special properties
+
+10. **Fractional Quantum Hall States** - quantum states in 2D electron systems
+
+11. **Fault-Tolerant Quantum Computation** - building reliable quantum computers despite errors
+
+12. **Cryogenic Engineering** - ultra-low temperature requirements and challenges
+
+This text is highly technical and covers **quantum computing hardware and error correction strategies**.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">The solution demonstrates excellent topic identification and understanding of the source material. However, it catastrophically fails all three mandatory requirements: (1) it is not a valid JSON array of strings, (2) topics include extra commentary and descriptions, and (3) the response contains additional text beyond the JSON array. The correct format should be a simple JSON array like ["Quantum Entanglement", "Quantum Computing Architectures", ...] with no additional content. These are explicit, non-negotiable requirements that were completely violated.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    

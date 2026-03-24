@@ -1,0 +1,38 @@
+[
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in machine learning have revolutionized artificial intelligence applications across multiple domains. Deep neural networks, a subset of machine learning techniques, have demonstrated exceptional performance in image recognition tasks, leveraging convolutional architectures and backpropagation algorithms. Furthermore, natural language processing has benefited from transformer-based deep learning models, which employ attention mechanisms to capture semantic relationships. Transfer learning, another machine learning paradigm, enables practitioners to leverage pre-trained deep neural networks for domain-specific tasks with limited labeled data. Reinforcement learning complements these approaches by enabling agents to learn optimal policies through interaction with environments, while supervised learning remains fundamental to training both traditional machine learning models and deep neural network architectures."
+    },
+    "solution_criteria": [
+      "Extracts all distinct topics without redundancy (e.g., 'machine learning' and 'deep neural networks' listed separately despite hierarchical relationship)",
+      "Returns results as a JSON array of strings",
+      "Avoids duplicate entries for overlapping or nested concepts"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholary article into a JSON array of strings",
+    "scenario": "Testing with a passage containing overlapping or nested topics (e.g., 'machine learning' and 'deep neural networks') to ensure distinct topic identification without redundancy"
+  },
+  {
+    "prompt_inputs": {
+      "content": "The phenomenon of quantum entanglement, wherein two or more particles exhibit correlated quantum states regardless of spatial separation, has profound implications for quantum computing architectures. Recent advances in superconducting qubit fabrication utilizing Josephson junctions have demonstrated coherence times exceeding 100 microseconds, enabling implementation of variational quantum eigensolvers (VQE) for molecular Hamiltonian simulation. Furthermore, topological quantum error correction schemes leveraging non-abelian anyons in fractional quantum Hall states present a promising pathway toward fault-tolerant quantum computation, though practical realization requires precise control of the energy gap and suppression of quasiparticle poisoning mechanisms at cryogenic temperatures below 50 millikelvin."
+    },
+    "solution_criteria": [
+      "Extracts all major domain-specific concepts and terminology (e.g., quantum entanglement, Josephson junctions, variational quantum eigensolvers, topological quantum error correction, non-abelian anyons, quantum Hall states)",
+      "Returns output as a valid JSON array of strings",
+      "Omits generic words while capturing specialized physics and quantum computing topics"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholary article into a JSON array of strings",
+    "scenario": "Testing with a dense, jargon-heavy passage from a specialized field (e.g., quantum physics or molecular biology) to verify extraction of domain-specific terminology and concepts"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in quantum computing have demonstrated significant implications for cryptography and data security, while simultaneously raising philosophical questions about the nature of computation and determinism. The development of error-correcting codes, particularly surface codes with threshold improvements of 1.1%, represents a critical engineering milestone. Meanwhile, literary scholars have begun examining how digital humanities methodologies enable large-scale textual analysis of Renaissance poetry, revealing patterns in metaphorical language use previously obscured by manual approaches. Interdisciplinary collaboration between computer scientists, philosophers, and humanities researchers has become essential, as quantum algorithms now promise to revolutionize both pharmaceutical drug discovery through molecular simulation and historical document authentication through cryptographic verification."
+    },
+    "solution_criteria": [
+      "Extraction includes topics from at least three distinct disciplines (technology/engineering, philosophy, and humanities)",
+      "All major subject areas mentioned are represented in the extracted topics",
+      "Topics are returned as a JSON array of strings with no additional formatting or metadata"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholary article into a JSON array of strings",
+    "scenario": "Testing with a multidisciplinary passage containing mixed technical and humanities topics to verify accurate extraction of diverse subject areas"
+  }
+]

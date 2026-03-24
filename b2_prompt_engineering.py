@@ -1,19 +1,13 @@
 from typing import Any
 from anthropic.types import MessageParam
-from functools import cache
+
 
 import fn
 
 
-@cache
-def get_evaluator() -> fn.PromptEvaluator:
-    evaluator = fn.PromptEvaluator()
-    return evaluator
-
-
-def generate_dataset() -> dict[str, Any]:
+def generate_dataset() -> list[dict[str, str]]:
     # we need an evaluator
-    evaluator = get_evaluator()
+    evaluator = fn.get_evaluator()
 
     # now a dataset
     dataset = evaluator.generate_dataset(
@@ -37,7 +31,7 @@ def generate_dataset() -> dict[str, Any]:
 
 def run_evaluator() -> list:
     # we need an evaluator
-    evaluator = get_evaluator()
+    evaluator = fn.get_evaluator()
 
     # now run the results
     results: list = evaluator.run_evaluation(
@@ -54,7 +48,7 @@ def run_evaluator() -> list:
 
 
 def versioned_prompt(version: int, prompt_inputs: dict[str, str]) -> str:
-    PROMPTS = {
+    prompts = {
         # starter prompt ... 2.0 score
         1: f"""
     What should this person eat?
@@ -132,24 +126,6 @@ def versioned_prompt(version: int, prompt_inputs: dict[str, str]) -> str:
         # Below we've taken some of the data from the eveal report and given it as a "one shot"
         # example of what the sample input and ideal output is.  If we'd have given more examples
         # it would be considered to be multishot.
-        6: f"""
-    Generate a one day meal plan for an athelete that meets their dietary restrictions.
-    
-    <athlete_information>
-    - Height: {prompt_inputs["height"]}
-    - Weight: {prompt_inputs["weight"]}
-    - Goal: {prompt_inputs["goal"]} 
-    - Dietary restrictions: {prompt_inputs["restrictions"]}
-    </athlete_information>
-    
-    Guidelines:
-    1. Include accurate daily calorie amount
-    2. Show protein, fat, and carb amounts  
-    3. Specify when to eat each meal
-    4. Use only foods that fit restrictions
-    5. List all portion sizes in grams
-    6. Keep budget-friendly if mentioned
-    """,
         6: f"""
     Generate a one day meal plan for an athelete that meets their dietary restrictions.
     
@@ -305,7 +281,7 @@ def versioned_prompt(version: int, prompt_inputs: dict[str, str]) -> str:
     """,
     }
 
-    return PROMPTS[version]
+    return prompts[version]
 
 
 def run_prompt(prompt_inputs: dict[str, Any]) -> str:

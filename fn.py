@@ -4,6 +4,7 @@ import concurrent.futures
 import re
 from textwrap import dedent
 from statistics import mean
+from functools import cache
 
 from dotenv import load_dotenv
 from anthropic import Anthropic
@@ -446,7 +447,7 @@ class PromptEvaluator:
         prompt_inputs_spec={},
         num_cases=1,
         output_file="dataset.json",
-    ) -> dict[str, Any]:
+    ) -> list[dict[str, str]]:
         """Generate test dataset based on task description and save to file"""
         ideas = self.generate_unique_ideas(
             task_description, prompt_inputs_spec, num_cases
@@ -654,3 +655,9 @@ class PromptEvaluator:
             f.write(html)
 
         return results
+
+
+@cache
+def get_evaluator() -> PromptEvaluator:
+    evaluator = PromptEvaluator()
+    return evaluator
