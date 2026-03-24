@@ -1,0 +1,229 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">3</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">7.7 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">66.7%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with a short interdisciplinary passage mixing social science data, statistical findings, and policy implications to assess whether the prompt can distinguish between primary research topics and secondary analytical topics</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study examines the relationship between remote work adoption and urban housing demand using longitudinal survey data from 2,847 households across metropolitan areas. Our regression analysis reveals a statistically significant negative correlation (r = -0.42, p < 0.001) between full-time remote work eligibility and residential proximity to central business districts, with workers relocating an average of 12.3 miles farther from city centers. These findings have profound implications for urban planning policy, suggesting that zoning regulations and transit infrastructure investments must be reconsidered as traditional commuting patterns dissolve. Additionally, we document secondary effects on commercial real estate valuations and local tax revenues, indicating that policymakers face a complex trade-off between workforce flexibility and municipal fiscal sustainability.</td>
+                <td class="criteria">• Identifies primary research topics (remote work adoption, urban housing demand, regression analysis findings) as distinct from secondary analytical topics (policy implications, commercial real estate effects, fiscal impacts)<br>• Extracts all major topics without including methodology details or statistical values<br>• Returns output as a JSON array of strings</td>
+                <td class="output"><pre>
+{
+  "topics": [
+    "Remote work adoption",
+    "Urban housing demand",
+    "Residential location patterns",
+    "Commuting behavior",
+    "Urban planning policy",
+    "Zoning regulations",
+    "Transit infrastructure",
+    "Commercial real estate valuations",
+    "Local tax revenues",
+    "Municipal fiscal sustainability",
+    "Workforce flexibility"
+  ]
+}
+</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it contains a valid JSON array of strings, each string is a clean topic without commentary, and the response contains only the JSON array. Against the secondary criteria, it successfully identifies primary research topics (remote work adoption, urban housing demand) as distinct from secondary analytical topics (policy implications, commercial real estate, fiscal impacts). It excludes methodology details and statistical values. The extraction is comprehensive and well-organized. Minor redundancy exists in topic selection, but this does not violate any stated criteria and represents reasonable topic extraction choices from the passage.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a humanities passage containing abstract concepts and multiple overlapping themes (philosophy, ethics, history) to evaluate topic extraction accuracy when subjects are interrelated and not explicitly labeled</td>
+                <td class="prompt-inputs"><strong>content:</strong> The concept of human agency has long occupied a central position in philosophical discourse, yet its relationship to moral responsibility remains contested. Enlightenment thinkers posited that rational autonomy constituted the foundation of ethical accountability, a view that shaped legal frameworks throughout the nineteenth century. However, historical analysis reveals how social structures and power dynamics constrained individual choice in ways philosophers had not adequately theorized. Contemporary debates between compatibilists and libertarians reflect this tension: while some argue that moral responsibility requires freedom from deterministic causation, others contend that responsibility can coexist with a deterministic universe if agents act according to their own desires and reasoning. This philosophical disagreement carries profound implications for how we understand criminal justice, personal accountability, and the nature of human freedom itself.</td>
+                <td class="criteria">• Identifies core philosophical concepts (agency, moral responsibility, autonomy, determinism, compatibilism)<br>• Recognizes overlapping themes across philosophy, ethics, and history without explicit topic labels<br>• Distinguishes between main topics and supporting examples or contextual references</td>
+                <td class="output"><pre>
+{
+  "topics": [
+    "Human agency",
+    "Moral responsibility",
+    "Philosophical discourse",
+    "Enlightenment philosophy",
+    "Rational autonomy",
+    "Ethical accountability",
+    "Legal frameworks (19th century)",
+    "Social structures and power dynamics",
+    "Individual choice",
+    "Compatibilism",
+    "Libertarianism",
+    "Determinism",
+    "Free will",
+    "Criminal justice",
+    "Personal accountability",
+    "Human freedom"
+  ]
+}
+</pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it contains a valid JSON array of strings with topics only (no extra commentary), and the response is JSON only with nothing else. It strongly satisfies the secondary criteria by identifying core philosophical concepts (human agency, moral responsibility, rational autonomy, determinism, compatibilism, libertarianism, free will) and recognizing overlapping themes across philosophy, ethics, and history. The distinction between main topics and supporting examples is generally well-executed. Minor issues include the inclusion of 'Philosophical discourse' as a topic (which is more about the context of discussion than a substantive topic) and the parenthetical notation in 'Legal frameworks (19th century)' which technically adds extra commentary. However, these are minor deviations that don't violate mandatory requirements.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a technical scientific passage containing domain-specific jargon, chemical formulas, and methodology descriptions to verify correct identification of concrete technical topics versus procedural elements</td>
+                <td class="prompt-inputs"><strong>content:</strong> We synthesized a series of novel copper(II) complexes with N,N'-bis(salicylidene)ethylenediamine ligands through a condensation reaction at 60°C for 4 hours. The resulting compounds were characterized using X-ray crystallography, revealing octahedral coordination geometry around the metal center. UV-vis spectroscopy showed λmax values between 420-450 nm, consistent with d-d transitions. We evaluated the catalytic activity of these complexes in the oxidation of benzyl alcohol to benzaldehyde using H₂O₂ as the oxidant under aerobic conditions. The turnover frequency (TOF) reached 240 h⁻¹ for the most active catalyst, with excellent substrate selectivity and minimal over-oxidation products.</td>
+                <td class="criteria">• Extracts concrete technical topics (copper(II) complexes, salicylidene ligands, coordination geometry, UV-vis spectroscopy, benzyl alcohol oxidation) rather than procedural steps<br>• Identifies chemical compounds and phenomena as distinct topics (e.g., 'H₂O₂' or 'benzaldehyde' as topics, not just 'oxidation')<br>• Excludes or minimizes procedural/methodological elements (e.g., 'condensation reaction at 60°C for 4 hours' is procedure, not a topic)</td>
+                <td class="output"><pre>
+{
+  "topics": [
+    "Copper(II) complexes",
+    "Coordination chemistry",
+    "Schiff base ligands (N,N'-bis(salicylidene)ethylenediamine)",
+    "Synthesis methods (condensation reaction)",
+    "X-ray crystallography",
+    "Coordination geometry (octahedral)",
+    "UV-vis spectroscopy",
+    "d-d transitions",
+    "Catalysis",
+    "Alcohol oxidation",
+    "Hydrogen peroxide oxidation",
+    "Catalytic activity/performance metrics (TOF)",
+    "Substrate selectivity",
+    "Aerobic oxidation"
+  ]
+}
+</pre></td>
+                <td class="score-col"><span class="score score-medium">6</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it contains a valid JSON array of strings with topics only, no extra commentary, and nothing beyond the JSON. However, it has notable deficiencies against secondary criteria. The criteria explicitly state to identify chemical compounds as distinct topics (e.g., 'H₂O₂' or 'benzaldehyde'), yet the solution omits benzyl alcohol, benzaldehyde, and H₂O₂ as individual topics. Additionally, 'Synthesis methods (condensation reaction)' violates the criterion to exclude procedural elements - condensation reaction at 60°C for 4 hours is clearly procedure, not a topic. The inclusion of parenthetical explanations in some entries also slightly violates the 'topic without extra commentary' requirement, though this is minor. The solution demonstrates good topical coverage overall but fails to fully satisfy the secondary criteria regarding specific chemical compounds and procedural exclusion.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    

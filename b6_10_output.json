@@ -1,0 +1,53 @@
+[
+  {
+    "output": "\n[\n  \"remote work adoption\",\n  \"urban housing demand\",\n  \"longitudinal survey data\",\n  \"regression analysis\",\n  \"residential proximity to central business districts\",\n  \"worker relocation patterns\",\n  \"urban planning policy\",\n  \"zoning regulations\",\n  \"transit infrastructure\",\n  \"commuting patterns\",\n  \"commercial real estate valuations\",\n  \"local tax revenues\",\n  \"workforce flexibility\",\n  \"municipal fiscal sustainability\"\n]\n",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "This study examines the relationship between remote work adoption and urban housing demand using longitudinal survey data from 2,847 households across metropolitan areas. Our regression analysis reveals a statistically significant negative correlation (r = -0.42, p < 0.001) between full-time remote work eligibility and residential proximity to central business districts, with workers relocating an average of 12.3 miles farther from city centers. These findings have profound implications for urban planning policy, suggesting that zoning regulations and transit infrastructure investments must be reconsidered as traditional commuting patterns dissolve. Additionally, we document secondary effects on commercial real estate valuations and local tax revenues, indicating that policymakers face a complex trade-off between workforce flexibility and municipal fiscal sustainability."
+      },
+      "solution_criteria": [
+        "Identifies primary research topics (remote work adoption, urban housing demand, regression analysis findings) as distinct from secondary analytical topics (policy implications, commercial real estate effects, fiscal impacts)",
+        "Extracts all major topics without including methodology details or statistical values",
+        "Returns output as a JSON array of strings"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholary article into a JSON array of strings",
+      "scenario": "Testing with a short interdisciplinary passage mixing social science data, statistical findings, and policy implications to assess whether the prompt can distinguish between primary research topics and secondary analytical topics"
+    },
+    "score": 7,
+    "reasoning": "The solution provides a properly formatted JSON array of strings with no extraneous commentary. It captures all major topics from the passage and effectively distinguishes primary research topics from secondary analytical topics. However, it includes 'longitudinal survey data' which explicitly violates the secondary criteria stating 'Extracts all major topics without including methodology details or statistical values.' This is a clear deficiency against stated criteria, though the mandatory requirements are technically met. The inclusion of methodology details represents a meaningful deviation from the specified evaluation criteria."
+  },
+  {
+    "output": "\n[\n  \"copper(II) complexes\",\n  \"N,N'-bis(salicylidene)ethylenediamine ligands\",\n  \"condensation reaction\",\n  \"X-ray crystallography\",\n  \"octahedral coordination geometry\",\n  \"UV-vis spectroscopy\",\n  \"d-d transitions\",\n  \"catalytic activity\",\n  \"benzyl alcohol oxidation\",\n  \"benzaldehyde\",\n  \"hydrogen peroxide oxidant\",\n  \"aerobic conditions\",\n  \"turnover frequency\",\n  \"substrate selectivity\"\n]\n",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "We synthesized a series of novel copper(II) complexes with N,N'-bis(salicylidene)ethylenediamine ligands through a condensation reaction at 60\u00b0C for 4 hours. The resulting compounds were characterized using X-ray crystallography, revealing octahedral coordination geometry around the metal center. UV-vis spectroscopy showed \u03bbmax values between 420-450 nm, consistent with d-d transitions. We evaluated the catalytic activity of these complexes in the oxidation of benzyl alcohol to benzaldehyde using H\u2082O\u2082 as the oxidant under aerobic conditions. The turnover frequency (TOF) reached 240 h\u207b\u00b9 for the most active catalyst, with excellent substrate selectivity and minimal over-oxidation products."
+      },
+      "solution_criteria": [
+        "Extracts concrete technical topics (copper(II) complexes, salicylidene ligands, coordination geometry, UV-vis spectroscopy, benzyl alcohol oxidation) rather than procedural steps",
+        "Identifies chemical compounds and phenomena as distinct topics (e.g., 'H\u2082O\u2082' or 'benzaldehyde' as topics, not just 'oxidation')",
+        "Excludes or minimizes procedural/methodological elements (e.g., 'condensation reaction at 60\u00b0C for 4 hours' is procedure, not a topic)"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholary article into a JSON array of strings",
+      "scenario": "Testing with a technical scientific passage containing domain-specific jargon, chemical formulas, and methodology descriptions to verify correct identification of concrete technical topics versus procedural elements"
+    },
+    "score": 6,
+    "reasoning": "The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics with no extra commentary. However, it has notable deficiencies in the secondary criteria. The inclusion of 'condensation reaction' and 'aerobic conditions' violates the explicit criterion to 'exclude or minimize procedural/methodological elements.' These are process descriptions rather than substantive topics. The solution correctly identifies most concrete technical topics and chemical compounds, but the procedural inclusions represent a meaningful deviation from the stated criteria. The response demonstrates good understanding of the task but fails to fully apply the filtering principle for procedural content."
+  },
+  {
+    "output": "\n[\n  \"human agency\",\n  \"moral responsibility\",\n  \"rational autonomy\",\n  \"ethical accountability\",\n  \"Enlightenment philosophy\",\n  \"legal frameworks\",\n  \"social structures\",\n  \"power dynamics\",\n  \"individual choice\",\n  \"compatibilism\",\n  \"libertarianism\",\n  \"determinism\",\n  \"free will\",\n  \"criminal justice\",\n  \"personal accountability\",\n  \"human freedom\"\n]\n",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "The concept of human agency has long occupied a central position in philosophical discourse, yet its relationship to moral responsibility remains contested. Enlightenment thinkers posited that rational autonomy constituted the foundation of ethical accountability, a view that shaped legal frameworks throughout the nineteenth century. However, historical analysis reveals how social structures and power dynamics constrained individual choice in ways philosophers had not adequately theorized. Contemporary debates between compatibilists and libertarians reflect this tension: while some argue that moral responsibility requires freedom from deterministic causation, others contend that responsibility can coexist with a deterministic universe if agents act according to their own desires and reasoning. This philosophical disagreement carries profound implications for how we understand criminal justice, personal accountability, and the nature of human freedom itself."
+      },
+      "solution_criteria": [
+        "Identifies core philosophical concepts (agency, moral responsibility, autonomy, determinism, compatibilism)",
+        "Recognizes overlapping themes across philosophy, ethics, and history without explicit topic labels",
+        "Distinguishes between main topics and supporting examples or contextual references"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholary article into a JSON array of strings",
+      "scenario": "Testing with a humanities passage containing abstract concepts and multiple overlapping themes (philosophy, ethics, history) to evaluate topic extraction accuracy when subjects are interrelated and not explicitly labeled"
+    },
+    "score": 8,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the passage with no extra commentary. It successfully identifies core philosophical concepts and recognizes overlapping themes across disciplines. However, it has minor deficiencies in the secondary criteria by including an inferred topic ('free will') not explicitly stated in the text, and by treating contextual references with equal weight to main topics. These are minor issues that do not undermine the overall quality of the extraction."
+  }
+]

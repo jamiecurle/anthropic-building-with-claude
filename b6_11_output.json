@@ -1,0 +1,53 @@
+[
+  {
+    "output": "\n[\n  \"Copper(II) complexes\",\n  \"N,N'-bis(salicylidene)ethylenediamine ligands\",\n  \"X-ray crystallography\",\n  \"Octahedral coordination geometry\",\n  \"UV-vis spectroscopy\",\n  \"d-d transitions\",\n  \"Catalytic activity\",\n  \"Benzyl alcohol oxidation\",\n  \"Benzaldehyde\",\n  \"Hydrogen peroxide\",\n  \"Aerobic conditions\",\n  \"Turnover frequency\",\n  \"Substrate selectivity\",\n  \"Over-oxidation\"\n]\n",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "We synthesized a series of novel copper(II) complexes with N,N'-bis(salicylidene)ethylenediamine ligands through a condensation reaction at 60\u00b0C for 4 hours. The resulting compounds were characterized using X-ray crystallography, revealing octahedral coordination geometry around the metal center. UV-vis spectroscopy showed \u03bbmax values between 420-450 nm, consistent with d-d transitions. We evaluated the catalytic activity of these complexes in the oxidation of benzyl alcohol to benzaldehyde using H\u2082O\u2082 as the oxidant under aerobic conditions. The turnover frequency (TOF) reached 240 h\u207b\u00b9 for the most active catalyst, with excellent substrate selectivity and minimal over-oxidation products."
+      },
+      "solution_criteria": [
+        "Extracts concrete technical topics (copper(II) complexes, salicylidene ligands, coordination geometry, UV-vis spectroscopy, benzyl alcohol oxidation) rather than procedural steps",
+        "Identifies chemical compounds and phenomena as distinct topics (e.g., 'H\u2082O\u2082' or 'benzaldehyde' as topics, not just 'oxidation')",
+        "Excludes or minimizes procedural/methodological elements (e.g., 'condensation reaction at 60\u00b0C for 4 hours' is procedure, not a topic)"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholary article into a JSON array of strings",
+      "scenario": "Testing with a technical scientific passage containing domain-specific jargon, chemical formulas, and methodology descriptions to verify correct identification of concrete technical topics versus procedural elements"
+    },
+    "score": 9,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the passage with no extra commentary. It demonstrates strong adherence to the secondary criteria by prioritizing concrete technical topics (copper complexes, ligands, spectroscopy methods, coordination geometry) over procedural elements. The inclusion of specific compounds and phenomena as distinct topics is well-executed. The only minor issue is the inclusion of 'Aerobic conditions', which is more of an experimental parameter than a substantive topic, though this is a marginal concern. Overall, the solution meets the stated criteria comprehensively."
+  },
+  {
+    "output": "\n[\n  \"Human agency\",\n  \"Moral responsibility\",\n  \"Philosophical discourse\",\n  \"Rational autonomy\",\n  \"Ethical accountability\",\n  \"Legal frameworks\",\n  \"Social structures\",\n  \"Power dynamics\",\n  \"Individual choice\",\n  \"Compatibilism\",\n  \"Libertarianism\",\n  \"Deterministic causation\",\n  \"Determinism\",\n  \"Criminal justice\",\n  \"Personal accountability\",\n  \"Human freedom\"\n]\n",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "The concept of human agency has long occupied a central position in philosophical discourse, yet its relationship to moral responsibility remains contested. Enlightenment thinkers posited that rational autonomy constituted the foundation of ethical accountability, a view that shaped legal frameworks throughout the nineteenth century. However, historical analysis reveals how social structures and power dynamics constrained individual choice in ways philosophers had not adequately theorized. Contemporary debates between compatibilists and libertarians reflect this tension: while some argue that moral responsibility requires freedom from deterministic causation, others contend that responsibility can coexist with a deterministic universe if agents act according to their own desires and reasoning. This philosophical disagreement carries profound implications for how we understand criminal justice, personal accountability, and the nature of human freedom itself."
+      },
+      "solution_criteria": [
+        "Identifies core philosophical concepts (agency, moral responsibility, autonomy, determinism, compatibilism)",
+        "Recognizes overlapping themes across philosophy, ethics, and history without explicit topic labels",
+        "Distinguishes between main topics and supporting examples or contextual references"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholary article into a JSON array of strings",
+      "scenario": "Testing with a humanities passage containing abstract concepts and multiple overlapping themes (philosophy, ethics, history) to evaluate topic extraction accuracy when subjects are interrelated and not explicitly labeled"
+    },
+    "score": 8,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the passage with no extra commentary. It successfully identifies the core philosophical concepts required by the secondary criteria (agency, moral responsibility, autonomy, determinism, compatibilism). The extraction is comprehensive and recognizes overlapping themes across philosophy, ethics, and history. However, there are minor inefficiencies: some entries like 'Philosophical discourse' are more contextual framing than substantive topics, and the inclusion of both 'Determinism' and 'Deterministic causation' represents unnecessary redundancy. These are minor issues that don't violate requirements but represent suboptimal topic selection according to the distinction criterion."
+  },
+  {
+    "output": "\n[\n  \"Remote work adoption\",\n  \"Urban housing demand\",\n  \"Longitudinal survey data\",\n  \"Metropolitan areas\",\n  \"Regression analysis\",\n  \"Residential proximity to central business districts\",\n  \"Worker relocation patterns\",\n  \"Urban planning policy\",\n  \"Zoning regulations\",\n  \"Transit infrastructure\",\n  \"Commuting patterns\",\n  \"Commercial real estate valuations\",\n  \"Local tax revenues\",\n  \"Municipal fiscal sustainability\",\n  \"Workforce flexibility\"\n]\n",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "This study examines the relationship between remote work adoption and urban housing demand using longitudinal survey data from 2,847 households across metropolitan areas. Our regression analysis reveals a statistically significant negative correlation (r = -0.42, p < 0.001) between full-time remote work eligibility and residential proximity to central business districts, with workers relocating an average of 12.3 miles farther from city centers. These findings have profound implications for urban planning policy, suggesting that zoning regulations and transit infrastructure investments must be reconsidered as traditional commuting patterns dissolve. Additionally, we document secondary effects on commercial real estate valuations and local tax revenues, indicating that policymakers face a complex trade-off between workforce flexibility and municipal fiscal sustainability."
+      },
+      "solution_criteria": [
+        "Identifies primary research topics (remote work adoption, urban housing demand, regression analysis findings) as distinct from secondary analytical topics (policy implications, commercial real estate effects, fiscal impacts)",
+        "Extracts all major topics without including methodology details or statistical values",
+        "Returns output as a JSON array of strings"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholary article into a JSON array of strings",
+      "scenario": "Testing with a short interdisciplinary passage mixing social science data, statistical findings, and policy implications to assess whether the prompt can distinguish between primary research topics and secondary analytical topics"
+    },
+    "score": 6,
+    "reasoning": "The solution meets all mandatory requirements: it is a valid JSON array of strings with only topic names and no extra commentary. However, it has notable deficiencies against the secondary criteria. The inclusion of 'Longitudinal survey data' and 'Regression analysis' directly violates the instruction to extract topics 'without including methodology details.' The criteria explicitly distinguish between primary research topics and secondary analytical topics, and methodology should be excluded. The solution includes 15 items when a more refined extraction excluding methodology would be stronger. Despite these issues, the core task is accomplished with good coverage of the actual research topics."
+  }
+]
