@@ -11,3 +11,5 @@ wheels/
 
 # no, we do not want the notebook checkpoints
 .ipynb_checkpoints
+
+.DS_Store
