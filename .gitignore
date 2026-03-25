@@ -9,6 +9,5 @@ wheels/
 # no you shall not have my api key.
 .env
 
-# no, we do not want the notebooks
-*.ipynb
+# no, we do not want the notebook checkpoints
 .ipynb_checkpoints
