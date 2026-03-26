@@ -1,3 +1,4 @@
+from typing import Any
 import json
 from datetime import datetime, timedelta
 import concurrent.futures
@@ -8,7 +9,7 @@ from functools import cache
 
 from dotenv import load_dotenv
 from anthropic import Anthropic
-from anthropic.types import MessageParam, TextBlock, Message
+from anthropic.types import MessageParam, TextBlock, Message, ToolParam, ToolUseBlock
 
 
 load_dotenv()
@@ -38,7 +39,8 @@ def chat(
     system: str | None = None,
     temperature: float = 0.2,
     stop_sequences: list[str] = [],
-) -> str:
+    tools: list[ToolParam] = [],
+) -> Any:
     """Basic text response handling"""
     message: Message = client.messages.create(
         model="claude-haiku-4-5",
@@ -53,6 +55,35 @@ def chat(
     block = message.content[0]
     assert isinstance(block, TextBlock)
     return block.text
+    return message
+
+
+def chat2(
+    messages: list[MessageParam],
+    system: str | None = None,
+    temperature: float = 0.2,
+    stop_sequences: list[str] = [],
+    tools: list[ToolParam] = [],
+) -> Message:
+    """Basic text response handling"""
+    return client.messages.create(
+        model="claude-haiku-4-5",
+        max_tokens=1000,
+        messages=messages,
+        system=system or "",
+        temperature=temperature,
+        stop_sequences=stop_sequences,
+        tools=tools,
+    )
+
+
+def get_text(message: Message) -> str | None:
+    texts = [b.text for b in message.content if b.type == "text"]
+    return "\n".join(texts) if texts else None
+
+
+def get_tool_calls(message: Message) -> list[ToolUseBlock]:
+    return [b for b in message.content if b.type == "tool_use"]
 
 
 #
