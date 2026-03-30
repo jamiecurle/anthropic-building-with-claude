@@ -24,7 +24,10 @@ def inspect(content: str, label: str | None = None) -> None:
 
 def add_user_message(messages: list[MessageParam], content: str) -> None:
     """Peasant context simulation"""
-    user_message: MessageParam = {"role": "user", "content": content}
+    user_message: MessageParam = {
+        "role": "user",
+        "content": content,
+    }
     messages.append(user_message)
 
 
