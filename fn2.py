@@ -19,6 +19,7 @@ from c_tools import (
     get_current_datetime_schema,
     add_duration_to_datetime_schema,
     set_reminder_schema,
+    save_article_schema,
     # batch_tool_schema,
 )
 
@@ -96,6 +97,7 @@ def run_conversation(messages: list) -> Message:
                 get_current_datetime_schema,
                 add_duration_to_datetime_schema,
                 set_reminder_schema,
+                save_article_schema,
             ],
         )
 
